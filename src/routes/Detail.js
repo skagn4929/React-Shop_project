@@ -6,29 +6,12 @@ import { addItem } from "./../store";
 import { useDispatch } from "react-redux";
 
 function Detail(props) {
-  let [alert, setAlert] = useState(true);
   let [탭, 탭변경] = useState(0);
   let { id } = useParams();
   let 찾은상품 = props.shoes.find(function (x) {
     return !!id ? x.id === Number(id) : x.id === 0;
   });
   let dispatch = useDispatch();
-
-  useEffect(() => {
-    let 꺼낸거 = localStorage.getItem("watched");
-    꺼낸거 = JSON.parse(꺼낸거);
-    꺼낸거.push(찾은상품.id);
-    꺼낸거 = new Set(꺼낸거);
-    꺼낸거 = Array.from(꺼낸거);
-    localStorage.setItem("watched", JSON.stringify(꺼낸거));
-  }, [찾은상품.id]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setAlert(false);
-    }, 2000);
-  }, []);
-
   return (
     <div className="container">
       {alert === true ? (
