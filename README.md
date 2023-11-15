@@ -1,5 +1,5 @@
 # React-Shop_project
-React를 사용하여 만든 간단한 Shop 프로젝트입니다.
+React를 사용하여 만든 간단한 [Shop](https://strong-marshmallow-e49402.netlify.app/) 프로젝트입니다.
 
 ## 1. 주요 기능
 ### Home
