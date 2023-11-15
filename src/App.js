@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { createContext, useState } from "react";
 import data from "./data.js";
-import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import Detail from "./routes/Detail.js";
 import axios from "axios";
 import Cart from "./routes/Cart";
@@ -28,13 +28,6 @@ function App() {
               }}
             >
               Home
-            </Nav.Link>
-            <Nav.Link
-              onClick={() => {
-                navigate("/detail");
-              }}
-            >
-              Detail
             </Nav.Link>
             <Nav.Link
               onClick={() => {
@@ -77,7 +70,6 @@ function App() {
           }
         />
 
-        <Route path="/detail" element={<Detail shoes={shoes} />} />
         <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
@@ -88,12 +80,14 @@ function App() {
 function Card(props) {
   return (
     <div className="col-md-4">
-      <img
-        src={
-          "https://codingapple1.github.io/shop/shoes" + (props.i + 1) + ".jpg"
-        }
-        width="80%"
-      />
+      <Link to={`/detail/${props.i}`} key={props.i}>
+        <img
+          src={
+            "https://codingapple1.github.io/shop/shoes" + (props.i + 1) + ".jpg"
+          }
+          width="80%"
+        />
+      </Link>
       <h5>{props.shoes.title}</h5>
       <p>{props.shoes.price}</p>
     </div>

@@ -2,10 +2,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 let cart = createSlice({
   name: "cart",
-  initialState: [
-    { id: 0, name: "White and Black", count: 2 },
-    { id: 2, name: "Grey yordan", count: 1 },
-  ],
+  initialState: [],
   reducers: {
     addCount(state, action) {
       let 번호 = state.findIndex((a) => {
@@ -14,7 +11,16 @@ let cart = createSlice({
       state[번호].count++;
     },
     addItem(state, action) {
-      state.push(action.payload);
+      // 상품이 이미 카트에 있는지 확인
+      let existingItem = state.find((item) => item.id === action.payload.id);
+
+      // 이미 있는 상품이면 수량 증가
+      if (existingItem) {
+        existingItem.count++;
+      } else {
+        // 없는 상품이면 새로 추가
+        state.push(action.payload);
+      }
     },
   },
 });
