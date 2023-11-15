@@ -69,7 +69,7 @@ function App() {
             </>
           }
         />
-
+        <Route path="/detail" element={<Detail shoes={shoes} />} />
         <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
