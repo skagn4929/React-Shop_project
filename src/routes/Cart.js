@@ -14,7 +14,7 @@ function Cart() {
             <th>ID</th>
             <th>상품명</th>
             <th>수량</th>
-            <th>변경하기</th>
+            <th>추가하기</th>
           </tr>
         </thead>
         <tbody>
