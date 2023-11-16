@@ -3,21 +3,30 @@ React를 사용하여 만든 [Shop](https://strong-marshmallow-e49402.netlify.ap
 
 ## 1. 주요 기능
 ### Home
+
+![home](https://github.com/skagn4929/React-Shop_project/assets/134206709/a615688b-de8f-4c1b-8e76-3caf9798d5e2)
+
 - 네비게이션 바를 통한 홈 및 장바구니로의 이동이 가능합니다.
 - 홈 페이지에서는 신발 목록을 볼 수 있으며, "더보기" 버튼을 통해 추가적인 상품을 로드할 수 있습니다.
 - 원하는 신발 상품을 클릭 하면 상세 페이지로 이동합니다.
 
 ### 상세 페이지
+
+![detail2](https://github.com/skagn4929/React-Shop_project/assets/134206709/62b7a073-c2cb-41bc-8b3c-c26cf54ffdf3)
+
 - 상세 페이지에서는 상품의 이미지 및 상세 정보를 확인할 수 있습니다.
 - 주문하기 버튼을 통해 상품을 장바구니에 추가할 수 있습니다.
 - 하단의 탭을 통해 다양한 정보를 확인할 수 있습니다.
 
 ### Cart
+
+![cart3](https://github.com/skagn4929/React-Shop_project/assets/134206709/e7209ddc-ca3a-4b57-a14c-5f5cbb521867)
+
 - 장바구니 페이지에서는 현재 장바구니에 담긴 상품 목록을 확인할 수 있습니다.
 - 각 상품의 수량을 추가할 수 있습니다.
 
 ## 2. 컴포넌트 상세 내용
-### App 컴포넌트 (App.js)
+### App 컴포넌트 ([App.js](https://github.com/skagn4929/React-Shop_project/blob/main/src/App.js))
 메인 컴포넌트로 전체 애플리케이션의 레이아웃을 담당합니다. 네비게이션 바, 라우팅, 그리고 메인 콘텐츠를 포함하고 있습니다.
 ```jsx
 // ... (import 및 context 관련 코드)
@@ -41,7 +50,7 @@ function App() {
 // ... (Card 컴포넌트 및 내보내기 문)
 
 ```
-### Card 컴포넌트 (Card.js)
+### Card 컴포넌트 ([App.js](https://github.com/skagn4929/React-Shop_project/blob/main/src/App.js))
 홈 페이지에서 개별 신발 아이템을 카드 형태로 표시하는 컴포넌트입니다. App.js에서 이 컴포넌트를 사용하여 신발 그리드를 렌더링합니다.
 ```jsx
 function Card(props) {
@@ -59,7 +68,7 @@ function Card(props) {
 export default Card;
 
 ```
-### Detail 컴포넌트 (Detail.js)
+### Detail 컴포넌트 ([Detail.js](https://github.com/skagn4929/React-Shop_project/blob/main/src/routes/Detail.js))
 선택한 신발에 대한 상세 정보를 표시하는 컴포넌트로, 이미지, 설명, 탭을 통한 추가 콘텐츠, 그리고 장바구니에 추가하는 기능을 제공합니다.
 ```jsx
 function Detail(props) {
@@ -99,7 +108,7 @@ function TabContent({ 탭 }) {
 export default Detail;
 
 ```
-### Cart 컴포넌트 (Cart.js)
+### Cart 컴포넌트 ([Cart.js](https://github.com/skagn4929/React-Shop_project/blob/main/src/routes/Cart.js))
 장바구니에 추가된 상품을 표시하는 컴포넌트입니다. 각 항목의 수량을 확인하고 증가시킬 수 있는 기능을 제공합니다.
 ```jsx
 function Cart() {
@@ -119,7 +128,7 @@ export default Cart;
 
 ```
 ## 3. 데이터 관리
-### Data.js
+### [Data.js](https://github.com/skagn4929/React-Shop_project/blob/main/src/data.js)
 단순한 데이터 파일로, 신발 객체의 배열을 포함하고 있습니다. 각 객체에는 ID, 제목, 내용, 가격이 포함되어 있습니다.
 ```jsx
 let data = [
@@ -131,7 +140,7 @@ let data = [
 export default data;
 
 ```
-### Store.js
+### [Store.js](https://github.com/skagn4929/React-Shop_project/blob/main/src/store.js)
 Redux Toolkit을 사용하여 장바구니 상태를 관리하기 위한 Redux 스토어 설정입니다.
 ```jsx
 // ... (Redux toolkit 관련 코드)
